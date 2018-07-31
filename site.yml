@@ -1,0 +1,20 @@
+---
+
+- name: apply this to common config (all nodes)
+  hosts: all   
+  remote_user: root
+  roles:
+    - common
+    
+- name: for web servers
+  hosts: web servers 
+  remote_user: root
+  roles:
+    - web
+    
+- name: for MySQl servers
+  hosts: db servers 
+  remote_user: root
+  
+  roles:
+    - db
